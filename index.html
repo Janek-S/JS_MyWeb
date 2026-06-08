@@ -1,236 +1,305 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title> <!--nazwa/tytuł strony-->
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.png"> <!--favicon - ikona strony internetowej, widoczna na pasku adresu przeglądarki i na kracie otwartej strony www.-->
-    <!--unikalny kod osadzania zestawu--> <script src="http://kit.fontawesome.com/xxxxxxxxxx.js" crossorigin="anonymous"></script> <!--link do fontawesome: https://fontawesome.com/ -->
 </head>
 <body>
-<div id="header">
-    <div class="container">
-        <nav>
-            <img src="images/Gemini_Generated_Image_3619kv3619kv3619.png" class="logo"><!--miejsce na autorskie logo-->
-            <ul id="sidemenu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Profolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <i class="fa-solid fa-xmark" onclick="closemenu()"></i> <!--ikonę pobrać z https://fontawesome.com/icons/categories (ten obszar dotyczy urządzeń mobilnych)-->
-            </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i><!--ikonę pobrać z https://fontawesome.com/icons/categories (ten obszar dotyczy urządzeń mobilnych)-->
-            <div class="toggle-btn" id="btn">
-                <span id="btnText">Light</span>
-                <img src="images/sun.png" id="btnIcon">
-            </div>
-        </nav>
-        <div class="header-text">
-            <h1 class="slide-left">Witam <span>Janek</span> Szwed.</h1> <!--miejsce na przedstawienie swojej osoby-->
-            <p class="slide-left">np. Chciałbym zaprezentować moje portfolio.</p> <!--krótki opis czego dotyczy strona-->
+
+<!-- NAV -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <div class="logo-mark">JK</div>
+        <ul id="sidemenu">
+            <li><a href="#about" onclick="closemenu()">O mnie</a></li>
+            <li><a href="#services" onclick="closemenu()">Usługi</a></li>
+            <li><a href="#portfolio" onclick="closemenu()">Portfolio</a></li>
+            <li><a href="#contact" onclick="closemenu()">Kontakt</a></li>
+            <li class="close-btn"><span onclick="closemenu()">✕</span></li>
+        </ul>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">
+                <span id="themeLabel">Dark</span>
+                <span class="toggle-icon" id="themeIcon">☀</span>
+            </button>
+            <button class="hamburger" onclick="openmenu()">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </div>
-</div>
-<!--ABOUT-->
-<div id="about">
-    <div class="container">
-        <div class="row">   
-            <div class="about-col-1">
-                <img src="images/"><!--miejsce na zdjęcie biznesowe-->
-            </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About Me</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><!--klika słów o sobie-->
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>np. Analiza biznesowa</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<!--opis umiejętności-->
-                            </li>
-                            <li><span>np. Rachunkowość</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li><!--opis umiejętności-->
-                            <li><span>np. Programowanie</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li><!--opis umiejętności-->
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>2017 - Current</span><br>zawód</li><!--doświadczenie zawodowe-->
-                            <li><span>2011 - 2017</span><br>zawód</li><!--doświadczenie zawodowe-->
-                            <li><span>2011 - 2011</span><br>zawód</li><!--doświadczenie zawodowe-->
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2027</span><br>Uniwersytet Ekonomiczny we Wrocławiu</li><!--edukacja i ukończone kursy-->
-                            <li><span>2025</span><br>Uniwersytet Ekonomiczny we Wrocławiu</li><!--edukacja i ukończone kursy-->
-                            <li><span>2011</span><br>Liceum/Technikum</li><!--edukacja i ukończone kursy-->
-                        </ul>
-                    </div>
-            </div> 
+</nav>
+
+<!-- HERO -->
+<section id="header">
+    <div class="hero-grid">
+        <div class="hero-tag">Dostępny do współpracy</div>
+        <h1 class="hero-title">
+            <span class="hero-line">Witam, jestem</span>
+            <span class="hero-name">Imię<br>Nazwisko</span>
+        </h1>
+        <p class="hero-sub">Krótki opis — czym się zajmujesz i co oferujesz.</p>
+        <div class="hero-cta">
+            <a href="#portfolio" class="btn-primary">Zobacz prace</a>
+            <a href="#contact" class="btn-ghost">Napisz do mnie</a>
         </div>
     </div>
-</div>
-<!--services-->
-<div id="services">
-    <div class="container">
-        <h1 class="sub-title">My Services</h1>
-        <div class="services-list">
-            <div>
-                <i class="fa-sharp fa-solid fa-gears"></i><!--ikonę pobrać z https://fontawesome.com/icons/categories-->
-                <h2>np. Analityk biznesowy</h2><!--stanowisko-->
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><!--opis posiadanych umiejętności-->
-            </div>
-            <div>
-                <i class="fa-solid fa-code"></i><!--ikonę pobrać z https://fontawesome.com/icons/categories-->
-                <h2>np. Księgowy</h2><!--stanowisko-->
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><!--opis posiadanych umiejętności-->
-            </div>
-            <div>
-                <i class="fa-solid fa-database"></i><!--ikonę pobrać z https://fontawesome.com/icons/categories-->
-                <h2>np. Informatyk</h2><!--stanowisko-->
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><!--opis posiadanych umiejętności-->
-            </div>
+    <div class="hero-photo-block">
+        <!-- WSTAW swoje zdjęcie: <img src="images/twoje-zdjecie.jpg" alt="Zdjęcie"> -->
+        <div class="photo-placeholder">
+            <span>Twoje zdjęcie</span>
         </div>
+        <div class="hero-deco-circle"></div>
     </div>
-</div>
-<!--portfolio-->
-<div id="portfolio">
-    <div class ="container">
-        <h1 class="sub-title">My Work</h1>
-        <div class="work-list">
-            <div class="work">
-                <img src="images/ring-binder-used-stored-documents.jpg"><!--zdjęcie związane z zainteresowaniami-->
-                <div class="layer">
-                    <h3>np. Power BI</h3> <!--wykonane projekty, które można połączyć z dyskiem Google lub odwołanie do strony, na której realizowano jakiś kurs-->
-                    <a href="https://drive.google...." target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+    <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <div class="section-label">01 — O mnie</div>
+        <div class="about-grid">
+            <div class="about-photo">
+                <!-- WSTAW zdjęcie biznesowe -->
+                <div class="photo-placeholder tall">
+                    <span>Zdjęcie biznesowe</span>
+                </div>
+                <div class="about-badge">
+                    <strong>5+</strong>
+                    <small>lat<br>doświadczenia</small>
                 </div>
             </div>
-            <div class="work">
-                <img src="images/"><!--zdjęcie związane z zainteresowaniami-->
-                <div class="layer">
-                    <h3>kurs EXCEL</h3><!--wykonane projekty, które można połączyć z dyskiem Google lub odwołanie do strony, na której realizowano jakiś kurs-->
-                    <a href="https://drive.google..." target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+            <div class="about-content">
+                <h2 class="section-title">Kim jestem</h2>
+                <p class="about-bio">Kilka słów o sobie — czym się pasjonujesz, czym się zajmujesz, jaką wartość dajesz klientom. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                <div class="tab-bar">
+                    <button class="tab-btn active" onclick="opentab(event,'skills')">Umiejętności</button>
+                    <button class="tab-btn" onclick="opentab(event,'experience')">Doświadczenie</button>
+                    <button class="tab-btn" onclick="opentab(event,'education')">Edukacja</button>
                 </div>
-            </div>
-            <div class="work">
-                <img src="images/"><!--zdjęcie związane z zainteresowaniami-->
-                <div class="layer">
-                    <h3>np. Python/C++/C#</h3><!--wykonane projekty, które można połączyć z dyskiem Google lub odwołanie do strony, na której realizowano jakiś kurs-->
-                    <a href="https:..." target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+
+                <div class="tab-pane active" id="skills">
+                    <div class="skill-item">
+                        <span class="skill-name">Analiza biznesowa</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Rachunkowość</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Programowanie</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="tab-pane" id="experience">
+                    <div class="skill-item">
+                        <span class="skill-name">2020 – obecnie</span>
+                        <p>Stanowisko / Firma</p>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">2017 – 2020</span>
+                        <p>Stanowisko / Firma</p>
+                    </div>
+                </div>
+                <div class="tab-pane" id="education">
+                    <div class="skill-item">
+                        <span class="skill-name">2027</span>
+                        <p>Uniwersytet Ekonomiczny we Wrocławiu</p>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">2025</span>
+                        <p>Kurs / Certyfikat</p>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">2021</span>
+                        <p>Liceum / Technikum</p>
+                    </div>
                 </div>
             </div>
         </div>
-       <!--<a href="#" class="btn">BACK</a>-->
     </div>
-</div>
-<!--contact-->
-<div id="contact">
+</section>
+
+<!-- SERVICES -->
+<section id="services">
     <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fa-solid fa-envelope"><!--ikonę pobrać z https://fontawesome.com/icons/categories--></i><a href="mailto:jan.kowalski.ue.wroc.pl" target="_blank">jan.kowalski.ue.wroc.pl</a></p><!--adres e-mail-->
-                <p><i class="fa-sharp fa-solid fa-square-phone"><!--ikonę pobrać z https://fontawesome.com/icons/categories--></i>+48 000 000 000</p><!--numer telefonu-->
-                <p><i class="fa-brands fa-linkedin"></i><!--ikonę pobrać z https://fontawesome.com/icons/categories--><a href="https://www.linkedin.com" target="_blank">linkedin.com</a></p><!--link do linkedin-->
-                <a href="images/CV" download class="btn btn2">Download CV</a>
+        <div class="section-label">02 — Usługi</div>
+        <h2 class="section-title">Co oferuję</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-num">01</div>
+                <h3>Analityk biznesowy</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <div class="service-arrow">→</div>
             </div>
-            <div class="contact-right">
+            <div class="service-card">
+                <div class="service-num">02</div>
+                <h3>Księgowość</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <div class="service-arrow">→</div>
+            </div>
+            <div class="service-card">
+                <div class="service-num">03</div>
+                <h3>Informatyk</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <div class="service-arrow">→</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+    <div class="container">
+        <div class="section-label">03 — Portfolio</div>
+        <h2 class="section-title">Moje prace</h2>
+        <div class="works-grid">
+            <div class="work-card">
+                <div class="work-img">
+                    <img src="images/ring-binder-used-stored-documents.jpg" alt="Power BI">
+                    <div class="work-overlay">
+                        <a href="https://drive.google.com" target="_blank" class="work-link">Otwórz projekt ↗</a>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span class="work-tag">Analityka</span>
+                    <h3>Power BI Dashboard</h3>
+                </div>
+            </div>
+            <div class="work-card">
+                <div class="work-img placeholder-img">
+                    <div class="img-placeholder"><span>Zdjęcie projektu</span></div>
+                    <div class="work-overlay">
+                        <a href="https://drive.google.com" target="_blank" class="work-link">Otwórz projekt ↗</a>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span class="work-tag">Arkusze</span>
+                    <h3>Kurs Excel</h3>
+                </div>
+            </div>
+            <div class="work-card">
+                <div class="work-img placeholder-img">
+                    <div class="img-placeholder"><span>Zdjęcie projektu</span></div>
+                    <div class="work-overlay">
+                        <a href="#" target="_blank" class="work-link">Otwórz projekt ↗</a>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span class="work-tag">Dev</span>
+                    <h3>Python / C++</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <div class="section-label">04 — Kontakt</div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2 class="section-title">Porozmawiajmy</h2>
+                <p class="contact-sub">Masz projekt? Pytania? Pisz śmiało.</p>
+                <div class="contact-links">
+                    <a href="mailto:jan.kowalski@example.com" class="contact-item">
+                        <span class="c-icon">✉</span>
+                        <span>jan.kowalski@example.com</span>
+                    </a>
+                    <a href="tel:+48000000000" class="contact-item">
+                        <span class="c-icon">☎</span>
+                        <span>+48 000 000 000</span>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" class="contact-item">
+                        <span class="c-icon">in</span>
+                        <span>linkedin.com/in/jan-kowalski</span>
+                    </a>
+                </div>
+                <a href="images/CV.pdf" download class="btn-primary" style="margin-top:2rem;display:inline-block;">Pobierz CV</a>
+            </div>
+            <div class="contact-form">
                 <form name="submit-to-google-sheet">
-                    <input type name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
+                    <div class="form-group">
+                        <input type="text" name="Name" placeholder="Twoje imię" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="Email" placeholder="Twój e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="Message" rows="5" placeholder="Treść wiadomości"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary full-width">Wyślij wiadomość</button>
+                    <span id="msg"></span>
                 </form>
-                <span id="msg"></span> 
-
             </div>
         </div>
     </div>
-    <div class="copyright">
-        <p>Copyright by...</p>
+</section>
+
+<footer>
+    <div class="container footer-inner">
+        <div class="logo-mark small">JK</div>
+        <p>© 2025 Jan Kowalski. Wszelkie prawa zastrzeżone.</p>
     </div>
-</div>
-<!--skrypt dotyczący ABOUT-->
+</footer>
+
 <script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
+// ---- TABS ----
+function opentab(e, tabname) {
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(tabname).classList.add('active');
+    e.currentTarget.classList.add('active');
+}
 
-</script>
-<!--skrypt dla urządzeń mobilnych-->
-<script>
-    var sidemenu = document.getElementById("sidemenu");
+// ---- MOBILE MENU ----
+function openmenu() { document.getElementById('sidemenu').classList.add('open'); }
+function closemenu() { document.getElementById('sidemenu').classList.remove('open'); }
 
-    function openmenu(){
-        sidemenu.style.right = "0";
-    }
+// ---- THEME TOGGLE ----
+let dark = true;
+function toggleTheme() {
+    dark = !dark;
+    document.body.classList.toggle('light-theme', !dark);
+    document.getElementById('themeLabel').textContent = dark ? 'Dark' : 'Light';
+    document.getElementById('themeIcon').textContent = dark ? '☀' : '☽';
+}
 
-    function closemenu(){
-        sidemenu.style.right = "-200px";
-    }
+// ---- NAVBAR SCROLL ----
+window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
 
-</script>
-<!--link do Google Add Script: https://www.google.com/script/start/-->
-<script>
-    const scriptURL = 'https:...'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
+// ---- CONTACT FORM ----
+const scriptURL = 'https://your-google-script-url-here';
+const form = document.forms['submit-to-google-sheet'];
+if (form) {
     form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            },5000)
-            form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(() => {
+                document.getElementById('msg').textContent = 'Wiadomość wysłana!';
+                setTimeout(() => document.getElementById('msg').textContent = '', 5000);
+                form.reset();
+            })
+            .catch(err => console.error(err));
+    });
+}
+
+// ---- REVEAL ON SCROLL ----
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.service-card, .work-card, .skill-item').forEach(el => observer.observe(el));
 </script>
-<!--skrypt do zmany koloru strony-->
-<script> 
-
-    let btn = document.getElementById("btn");
-    let btnText = document.getElementById("btnText");
-    let btnIcon = document.getElementById("btnIcon");
-    
-    
-    btn.onclick = function(){
-        document.body.classList.toggle("light-theme");
-    
-        if(document.body.classList.contains("light-theme")){
-            btnIcon.src = "images/moon.png";
-            btnText.innerHTML = "Dark";
-        }else{
-            btnIcon.src = "images/sun.png";
-            btnText.innerHTML = "Light";
-        }
-    }
-    
-    </script>
-
 </body>
 </html>
